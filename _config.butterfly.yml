@@ -1,0 +1,28 @@
+# Butterfly 主题覆盖配置
+# 完整配置项参考 node_modules/hexo-theme-butterfly/_config.yml
+
+# Pjax 动态加载(无刷新切换页面)
+pjax:
+  enable: true
+  # 需要排除的页面(如音乐页),取消注释并修改路径即可
+  # exclude:
+  #   - /music/
+
+# 懒加载(配合 Pjax 提升加载体验)
+lazyload:
+  enable: true
+  field: site # site: 全站图片 | post: 仅文章图片
+  placeholder:
+  blur: true # 加载中显示模糊占位图
+
+# 关闭不蒜子统计(busuanzi.ibruce.info 经常响应缓慢,拖累页面加载)
+busuanzi:
+  site_uv: false
+  site_pv: false
+  page_pv: false
+
+# 第三方资源全部本地化(配合 hexo-butterfly-extjs 插件)
+# 避免 cdn.jsdelivr.net 在国内访问慢的问题,资源从自己站点加载
+CDN:
+  internal_provider: local
+  third_party_provider: local

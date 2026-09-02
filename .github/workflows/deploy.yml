@@ -1,0 +1,49 @@
+name: Deploy Hexo to Gitee Pages
+
+on:
+  push:
+    branches: [main]   # 源码分支，按实际修改（如 master）
+  workflow_dispatch:   # 支持手动触发
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出源码
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive   # 若主题以子模块方式引入需开启
+
+      - name: 配置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 生成静态站点
+        run: npx hexo clean && npx hexo generate
+
+      - name: 部署到 Gitee
+        env:
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+        run: |
+          cd public
+          git init
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Deploy by GitHub Actions"
+          # 使用令牌推送（Gitee 账号私人令牌，具备仓库写权限）
+          git push -f "https://oauth2:${GITEE_TOKEN}@gitee.com/www115/www115.gitee.io.git" HEAD:master
+
+      - name: 触发 Gitee Pages 重新构建
+        env:
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+        run: |
+          curl -X POST "https://gitee.com/api/v5/repos/www115/www115.gitee.io/pages/builds?access_token=${GITEE_TOKEN}"
