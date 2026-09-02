@@ -101,9 +101,11 @@ ignore:
 theme: butterfly
 
 # Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://gitee.com/www115/www115.gitee.io.git
-  branch: master
+## 部署已由 GitHub Actions 自动完成（见 .github/workflows/deploy.yml）
+## 源码推送到 main 分支即自动构建发布，无需本地 hexo deploy
+## 如需手动部署兜底，取消注释（推送到 gh-pages 分支）：
+# deploy:
+#   type: git
+#   repo: https://github.com/niuyuxuan/niuyuxuan.github.io.git
+#   branch: gh-pages
 
