@@ -1,5 +1,8 @@
 ---
 title: python插件
+date: 2024-10-11
+categories:
+  - 开发笔记
 tags: 
 - python
 - Elasticsearch
