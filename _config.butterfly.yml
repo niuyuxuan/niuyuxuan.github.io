@@ -21,6 +21,20 @@ busuanzi:
   site_pv: false
   page_pv: false
 
+# 侧栏作者卡片（覆盖主题默认的占位链接）
+aside:
+  card_author:
+    enable: true
+    description:
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me
+      link: https://github.com/niuyuxuan
+  card_announcement:
+    enable: true
+    content: 欢迎来到 Niuniu's Blog！
+
 # 本地搜索（数据由 hexo-generator-search 生成 search.xml）
 search:
   use: local_search
