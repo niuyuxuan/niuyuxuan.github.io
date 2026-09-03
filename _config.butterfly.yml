@@ -21,6 +21,10 @@ busuanzi:
   site_pv: false
   page_pv: false
 
+# 本地搜索（数据由 hexo-generator-search 生成 search.xml）
+search:
+  use: local_search
+
 # 第三方资源全部本地化(配合 hexo-butterfly-extjs 插件)
 # 避免 cdn.jsdelivr.net 在国内访问慢的问题,资源从自己站点加载
 CDN:
