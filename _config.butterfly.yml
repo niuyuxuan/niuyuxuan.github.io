@@ -35,6 +35,33 @@ aside:
     enable: true
     content: 欢迎来到 Niuniu's Blog！
 
+# 字数统计与阅读时长（依赖 hexo-wordcount 插件）
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  busuanzi_page_pv: false
+
+# 文章版权声明：作者链接指向 GitHub
+post_copyright:
+  author_href: https://github.com/niuyuxuan
+
+# 页脚：博客实际创建于 2024 年
+footer:
+  owner:
+    enable: true
+    since: 2024
+
+# 评论系统：Giscus（基于 GitHub Discussions，免费无服务器）
+# 需先完成：仓库开启 Discussions → 安装 giscus App → 到 https://giscus.app 获取下方两个 ID
+# 拿到 ID 填入后，再把 comments.use 改为 Giscus 即可启用
+giscus:
+  repo: niuyuxuan/niuyuxuan.github.io
+  repo-id: # 待填写
+  category-id: # 待填写
+  light_theme: light
+  dark_theme: dark
+
 # 本地搜索（数据由 hexo-generator-search 生成 search.xml）
 search:
   use: local_search
