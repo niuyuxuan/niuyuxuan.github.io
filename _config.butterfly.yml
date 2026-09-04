@@ -53,12 +53,13 @@ footer:
     since: 2024
 
 # 评论系统：Giscus（基于 GitHub Discussions，免费无服务器）
-# 需先完成：仓库开启 Discussions → 安装 giscus App → 到 https://giscus.app 获取下方两个 ID
-# 拿到 ID 填入后，再把 comments.use 改为 Giscus 即可启用
+comments:
+  use: Giscus
+
 giscus:
   repo: niuyuxuan/niuyuxuan.github.io
-  repo-id: # 待填写
-  category-id: # 待填写
+  repo_id: R_kgDOUL0SeQ
+  category_id: DIC_kwDOUL0Sec4DE1nC
   light_theme: light
   dark_theme: dark
 
