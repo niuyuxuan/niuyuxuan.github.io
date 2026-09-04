@@ -21,6 +21,11 @@ busuanzi:
   site_pv: false
   page_pv: false
 
+# 侧栏社交图标
+social:
+  fab fa-github: https://github.com/niuyuxuan || Github
+  fas fa-rss: https://niuyuxuan.github.io/atom.xml || RSS 订阅
+
 # 侧栏作者卡片（覆盖主题默认的占位链接）
 aside:
   card_author:
